@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("F:/1972111/Dockers-master/banknote-authentication.jpeg");
+
+  min-height: 550px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;	
+  margin: 20px;
+  right: 0;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+  align-content: center;
+}
+
+/* Full-width input fields */
+input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: #bebebe;
+  background: #f8f8f8;
+}
+
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<h2>Bank Note Authentication</h2>
+<div class="bg-img">
+  <form action = "http://localhost:5000/predict" method = "post" class="container">
+    <h1>Enter the Inputs</h1>
+
+    <label for="variance"><b>Variance</b></label>
+    <input type="text" placeholder="Variance" name="variance" required>
+    
+    <label for="skewness"><b>Skewness</b></label>
+    <input type="text" placeholder="Skewness" name="skewness" required>
+
+    <label for="curtosis"><b>Curtosis</b></label>
+    <input type="text" placeholder="Curtosis" name="curtosis" required>
+
+    <label for="entropy"><b>Entropy</b></label>
+    <input type="text" placeholder="Entropy" name="entropy" required>
+    
+
+    <button type="submit" class="btn">Predict</button>
+  </form>
+</div>
+
+</body>
+</html>
