@@ -92,16 +92,18 @@ if __name__ == "__main__":
         elif choice == "2":
             
             regx = "^[A-Za-z]+@[A-Za-z]+\.[A-Za-z]{1,}$"
+            
+            regxpassword = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,16}$"
 
             print("Enter Account Details: ")
             inpName = input("UserName: ")
             inpCredentials = input("Password: ")
             
             if re.match(regx, inpName):
-                if len(inpCredentials) > 5 and len(inpCredentials) < 16:
+                if re.match(regxpassword, inpCredentials):
                     createUser(inpName, inpCredentials)
                 else:
-                    print("Please Enter a Password with minimum 5 character and Maximum of 16 Character")
+                    print("Please Enter a Valid Password with Minimum of 1 Uppercase, 1 Lowercase, one Special character with length 5 to 16")
             else:
                 print("Please Enter a valid Username in the format of 'username@mail.com'")
             
